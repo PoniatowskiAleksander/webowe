@@ -9,7 +9,8 @@ console.log("World Hello")
 
 const srv = http.createServer(async (req,res)=>{
 
-    const url = req.url
+    const url = req.url;
+    const method = req.method;
     if (url === '/'){
         res.statusCode = 200;
 
@@ -17,7 +18,7 @@ const srv = http.createServer(async (req,res)=>{
         res.setHeader('content-type','text/html');
         res.write(html);
         res.end();
-    } else if (url === '/kontakt'){// && method === 'POST'){
+    } else if (url === '/kontakt' && method === 'POST'){
         
         const body = [];
 
@@ -37,7 +38,7 @@ const srv = http.createServer(async (req,res)=>{
             //console.log('typ' + typeof(kontakt))
             await writeFile(`kontakt/message-${Date.now().toString()}.txt`, kontakt);
             res.statusCode = 302;
-            res.setHeader('Location', '/kontakt');
+            res.setHeader('Location', '/dziekujemy');
 
             return res.end()
         })
