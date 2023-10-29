@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kontakt</title>
+</head>
+<body>
+    <h1>Kontakt</h1>
+    <form id="form" method="post" action="/kontakt">
+        <label for="name">imie: </label>
+        <input id="name" type="text" placeholder="name" name="name">
+        <label for="email">email: </label>
+        <input id="email" type="email" placeholder="email" name="email">
+        <label for="subject">temat</label>
+        <select id="subject" name="subject">
+            <option>opt1</option>
+            <option>opt2</option>
+            <option>opt3</option>
+        </select>
+        <label for="content">tresc: </label>
+        <textarea id="content" name="content"></textarea>
+        <input id="submit" type="submit" value="wyslij"/>
+    </form>
+<script src="public/js/handler.js"></script>
+</body>
+</html>
